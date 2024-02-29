@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -76,4 +77,8 @@ dependencies {
 
     // Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
+    // Hilt
+    implementation("com.google.dagger:hilt-android:2.48")
+    kapt("com.google.dagger:hilt-android-compiler:2.48")
 }

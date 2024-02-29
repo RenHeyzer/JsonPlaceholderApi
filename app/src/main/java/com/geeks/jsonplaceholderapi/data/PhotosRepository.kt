@@ -1,18 +1,18 @@
 package com.geeks.jsonplaceholderapi.data
 
-import com.geeks.jsonplaceholderapi.data.local.room.RoomClient
-import com.geeks.jsonplaceholderapi.data.local.room.entitiy.PhotoEntity
-import com.geeks.jsonplaceholderapi.data.remote.RetrofitClient
+import com.geeks.jsonplaceholderapi.data.local.room.dao.PhotosDao
+import com.geeks.jsonplaceholderapi.data.remote.apiservices.PhotosApiService
 import com.geeks.jsonplaceholderapi.data.remote.models.Photo
 import com.geeks.jsonplaceholderapi.data.remote.models.toEntity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class PhotosRepository {
-
-    private val photosApiService = RetrofitClient.photosApiService
-    private val photosDao = RoomClient.database.photosDao()
+class PhotosRepository @Inject constructor(
+    private val photosApiService: PhotosApiService,
+    private val photosDao: PhotosDao
+) {
 
     fun addPhoto(
         photo: Photo,

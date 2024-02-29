@@ -7,10 +7,13 @@ import androidx.lifecycle.ViewModel
 import com.geeks.jsonplaceholderapi.data.PhotosRepository
 import com.geeks.jsonplaceholderapi.data.remote.models.Photo
 import com.geeks.jsonplaceholderapi.utils.UiState
+import dagger.hilt.android.lifecycle.HiltViewModel
+import javax.inject.Inject
 
-class InsertViewModel : ViewModel() {
-
-    private val photosRepository = PhotosRepository()
+@HiltViewModel
+class InsertViewModel @Inject constructor(
+    private val photosRepository: PhotosRepository
+) : ViewModel() {
 
     private val _photoLiveData = MutableLiveData<UiState<Photo>>(UiState.Loading())
     val photoLiveData: LiveData<UiState<Photo>> = _photoLiveData

@@ -10,7 +10,9 @@ import androidx.navigation.fragment.findNavController
 import com.geeks.jsonplaceholderapi.R
 import com.geeks.jsonplaceholderapi.databinding.FragmentHomeBinding
 import com.geeks.jsonplaceholderapi.ui.PhotosAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null

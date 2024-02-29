@@ -13,7 +13,9 @@ import com.geeks.jsonplaceholderapi.data.remote.models.Photo
 import com.geeks.jsonplaceholderapi.databinding.FragmentInsertBinding
 import com.geeks.jsonplaceholderapi.utils.UiState
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class InsertFragment : Fragment() {
 
     private var _binding: FragmentInsertBinding? = null
